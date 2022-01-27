@@ -2,8 +2,7 @@
 ## Introduction
 This is a program that can render an image of customizable spheres, triangles, and light sources in 3D space. You can define where the position of the camera is, where it is pointing, how far away the image is in 3D space, the position of as many spheres and triangles they want, their colors in RGB values, their reflectivity, the position of the lights, and even the light's colors.
 ## Bugs
--Currently bugs in the rendering of triangles and their reflections when the triangle isn't perpendicular to the camera.
--Program crashes when screen size or resolution of final image isn't a square.
+- Currently bugs in the rendering of triangles and their reflections when the triangle isn't perpendicular to the camera.
 ## How to run
 Note: You must have eclipse or other java IDE's, and GIMP or another program that can view ppm files installed to be able to run this program.
 Download all the files into your eclispe-workspace, or wherever you save your projects, then in Eclipse, click create new project and create a new project with the same name as this file- "RayTracer". Then, open the Main class, and update the filePath variable to the filepath where you want the image to be saved, then click run. Then open the location where you saved the file, and open it in GIMP, or any other program that can open a file in the ppm file format.
@@ -11,17 +10,17 @@ Download all the files into your eclispe-workspace, or wherever you save your pr
 ### Main
 This class is where you define all of the paramteres required to render the image, including the camera position and direction, the image distance and size, the resolution of the final image, the positions and parameters of all of the spheres and triangles, and the smoothness of shadows.
 ### Vector
-An object class that stores 3D vectors as its x, y, and z coordinates. It contains functions to find the cross product, dot product, scalar product, and to get a unit Vector of the given vector.
+A class that stores 3D vectors as its x, y, and z coordinates. It contains functions to find the cross product, dot product, scalar product, and to get a unit Vector of the given vector.
 ### Point
-An object class that stores a point as its x, y and z coordinates. It contains functions to add and subtract Vectors and other Points. Also contains a function that jitters the value of the point by a inputed range.
+A class that stores a point as its x, y and z coordinates. It contains functions to add and subtract Vectors and other Points. Also contains a function that jitters the value of the point by a inputed range.
 ### Color
-An object class that stores a color as an RGB value from 0 to 1. It contains functions to add it to other colors and single values.
+A class that stores a color as an RGB value from 0 to 1. It contains functions to add it to other colors and single values.
 ### Camera
-An object that stores the position of the camera(a Point), the direction it points(a Vector), and the up direction perpendicular to it(a Vector) to determine the rotation of the camera.
+A class that stores the position of the camera(a Point), the direction it points(a Vector), and the up direction perpendicular to it(a Vector) to determine the rotation of the camera.
 ### Screen
-An object that stores the size of the image in 3D space, and its distance from the camera. It also does computations to find the top corner of the screen that the Scene class uses to render the image.
+A class that stores the size of the image in 3D space, and its distance from the camera. It also does computations to find the top corner of the screen that the Scene class uses to render the image.
 ### Buffer
-An object that that defines the resolution of the image, and also takes the final image and writes in a ppm file, that can be opened by GIMP, or any other program that can read the ppm file format.
+A class that defines the resolution of the image, and also takes the final image and writes in a ppm file, that can be opened by GIMP, or any other program that can read the ppm file format.
 ### Light
 This class is used to define a light source in space. You can define a position(a Point) and color(a Color).
 ### Shape
