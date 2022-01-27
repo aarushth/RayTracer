@@ -16,10 +16,6 @@ public class Point {
 		this.y = v.getY();
 		this.z = v.getZ();
 	}
-	/*public Point(float x, float y) {
-		this.x = x;
-		this.y = y;
-	}*/
 	public Point add(Vector vect) {
 		return new Point(vect.getX()+x, vect.getY()+y, vect.getZ()+z);
 	}

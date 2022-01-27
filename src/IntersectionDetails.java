@@ -1,12 +1,10 @@
 public class IntersectionDetails {
 	private float distance;
 	private Point point;
-	private Color color;
 	private Shape shape;
-	public IntersectionDetails(float d, Point p, Color c, Shape s) {
+	public IntersectionDetails(float d, Point p, Shape s) {
 		distance = d;
 		point = p;
-		color = c;
 		shape = s;
 	}
 	
@@ -19,11 +17,11 @@ public class IntersectionDetails {
 	}
 	
 	public Color getColor() {
-		return color;
+		return shape.color;
 	}
 	
 	public void setColor(Color c) {
-		color = c;
+		shape.color = c;
 	}
 	
 	public Shape getShape() {

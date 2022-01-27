@@ -23,14 +23,14 @@ public class Scene {
 		float multiplierWidth = screen.getWidth()/buffer.getWidth();
 		Vector colDir = camera.getViewVector().crossProduct(camera.getUpVector());
 		Vector rowDir = camera.getUpVector().multiply((float) -1);
-		for(float i = 0; i<buffer.getHeight(); i++) {
-			for(float j = 0; j<buffer.getWidth(); j++) {
-				Vector colIncr = colDir.multiply(j*multiplierWidth);
-				Vector rowIncr = rowDir.multiply(i*multiplierHeight);
+		for(float i = 0; i < buffer.getWidth(); i++) {
+			for(float j = 0; j < buffer.getHeight(); j++) {
+				Vector colIncr = colDir.multiply(i*multiplierWidth);
+				Vector rowIncr = rowDir.multiply(j*multiplierHeight);
 				Point p = screen.getUpperleftPosition().add(colIncr).add(rowIncr);
 				Vector ray = Vector.getUnitVector(new Vector(p, camera.getOrigin()));
 				
-				buffer.putPixel(new Point(j,i, 0), traceRay(ray, camera.getOrigin(), 0));
+				buffer.putPixel(new Point(i,j, 0), traceRay(ray, camera.getOrigin(), 0));
 			}
 		}
 		buffer.dumpBuffer();
@@ -42,7 +42,7 @@ public class Scene {
 		}
 		
 		IntersectionDetails min = null;
-		for(int k = 0;k < objects.size(); k++) {
+		for(int k = 0; k < objects.size(); k++) {
 			IntersectionDetails intersection =  objects.get(k).intersection(ray, camera.getOrigin());
 			if(min == null || (intersection != null && intersection.getDistance() < min.getDistance())) {
 				min = intersection;

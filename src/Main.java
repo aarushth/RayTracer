@@ -2,14 +2,18 @@ import java.util.ArrayList;
 
 public class Main {
 	public static void main(String args[]) {
-
+		
+		//define the file path where you want the image to be saved
+		//        Recommendation: change this  |  to your user name on the system. 
+		//                                   \ /
+		String filePath = "C:\\Users\\" + "aarus" + "\\AppData\\RayTracerImage.ppm";
 		//define the viewing position, viewing direction vector, 
 		//and the up vector(perpendicular to the direction vector) to determine the rotation of the image
 		Camera camera = new Camera(new Point(0, 0, 0), new Vector(0, 1, 0), new Vector(0,  0, 1));
 		//determine the the distance of the image from the camera and the width and height of the screen in space
-		Screen screen = new Screen(5, 20, 20, camera);
+		Screen screen = new Screen(5, 20, 10, camera);
 		//determine the resolution of the final image
-		Buffer buffer = new Buffer(1000,1000);
+		Buffer buffer = new Buffer(2000, 1000, filePath);
 		//this is the array of all spheres
 		ArrayList <Shape> shapes = new ArrayList<Shape>();
 	

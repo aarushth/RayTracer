@@ -23,7 +23,7 @@ public class Sphere extends Shape{
 			if (discriminant == 0 && !(dTemp < 0)) {
 				
 				Point i = origin.add(vector.multiply(dTemp));
-				tempReturn = new IntersectionDetails(dTemp, i, color, this);
+				tempReturn = new IntersectionDetails(dTemp, i, this);
 			}else {
 				float d1 = (float) (dTemp + Math.sqrt(discriminant));
 				float d2 = (float) (dTemp - Math.sqrt(discriminant));
@@ -31,10 +31,10 @@ public class Sphere extends Shape{
 				Point i2 = origin.add(vector.multiply(d2));
 				
 				if(!(d1<0)) {
-					tempReturn = new IntersectionDetails(d1, i1, color, this);
+					tempReturn = new IntersectionDetails(d1, i1, this); 
 				}
 				if(!(d2<0)) {
-					tempReturn = new IntersectionDetails(d2, i2, color, this);
+					tempReturn = new IntersectionDetails(d2, i2, this);
 				}
 			}
 		}

@@ -43,7 +43,7 @@ public class Triangle extends Shape{
 			Vector checkB = Vector.getUnitVector(AC.crossProduct(QC));
 			Vector checkC = Vector.getUnitVector(CB.crossProduct(QB));
 			if(checkA.equals(normal) &&  checkB.equals(normal) &&  checkC.equals(normal)) {
-				intersection = new IntersectionDetails(intersectionDistance, intersectionPoint, color, this);
+				intersection = new IntersectionDetails(intersectionDistance, intersectionPoint, this);
 			}
 		}
 		return intersection;

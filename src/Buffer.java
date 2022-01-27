@@ -5,17 +5,19 @@ public class Buffer {
 	
 	private int width;
 	private int height;
+	private String filePath;
 	private Color[][] screen;
 	
-	public Buffer(int w, int h) {
+	public Buffer(int w, int h, String fp) {
+		filePath = fp;
 		width = w;
 		height = h;
-		screen = new Color[width][height];
+		screen = new Color[height][width];
 	}
 	
 	public void dumpBuffer() {
 		try {
-		      FileWriter file = new FileWriter("C:\\Users\\aarus\\AppData\\filename.ppm");
+		      FileWriter file = new FileWriter(filePath);
 		      file.write("P3\r\n" + Integer.toString(width) + " " + Integer.toString(height) + "\r\n65535");
 		      for(int i = 0; i < height; i++) {
 		    	  for(int j = 0; j < width; j++) {
