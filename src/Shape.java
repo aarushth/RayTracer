@@ -1,5 +1,5 @@
 public class Shape {
-	protected Color color;
+	protected CustomColor color;
 	protected float kD;
 	protected float kA;
 	protected float reflectivity;
@@ -17,9 +17,9 @@ public class Shape {
 		return null;
 	}
 	
-	public Color colorCalc(IntersectionDetails intersection, Vector view, Point lightSource, Color lightColor, boolean isLightReaching, Scene scene, int recursionDepth) {
-		Color finalCol = null;
-		Color ambientCol = intersection.getColor().multiply(kA).multiply(lightColor);
+	public CustomColor colorCalc(IntersectionDetails intersection, Vector view, Point lightSource, CustomColor lightColor, boolean isLightReaching, Scene scene, int recursionDepth) {
+		CustomColor finalCol = null;
+		CustomColor ambientCol = intersection.getColor().multiply(kA).multiply(lightColor);
 		Vector normal = getNormal(intersection);
 		float normalCheck1 = normal.dotProduct(Vector.getUnitVector(view.multiply(-1f)));
 		float normalCheck2 = normal.multiply(-1f).dotProduct(Vector.getUnitVector(view.multiply(-1f)));
@@ -29,7 +29,7 @@ public class Shape {
 		Vector light = Vector.getUnitVector(new Vector(lightSource, intersection.getPoint()));
 		float dp = Math.max(light.dotProduct(normal), 0);
 		if(isLightReaching) {
-				Color diffuseCol = intersection.getColor().multiply(lightColor.multiply(kD*dp));
+				CustomColor diffuseCol = intersection.getColor().multiply(lightColor.multiply(kD*dp));
 				finalCol = ambientCol.add(diffuseCol);
 		}else {
 			finalCol = ambientCol;

@@ -5,20 +5,24 @@ public class Screen {
 	private Point heightPosition;
 	private Point centerPosition;
 	private Point upperLeftPosition;
-
+	private Camera cam;
 	public Screen(float d, float w, float h, Camera c) {
 		distance = d;
 		width = w;
 		height = h;
-		Vector temp = c.getViewVector().multiply(distance);
-		centerPosition = c.getOrigin().add(temp);
-		temp = c.getUpVector().multiply(height/2);
-		heightPosition = centerPosition.add(temp);
-		temp = c.getUpVector().crossProduct(c.getViewVector());
-		temp = temp.multiply(width/2);
-		upperLeftPosition = heightPosition.add(temp);
+		cam = c;
+		updateScreen();
 		}
 	
+	public void updateScreen() {
+		Vector temp = cam.getViewVector().multiply(distance);
+		centerPosition = cam.getOrigin().add(temp);
+		temp = cam.getUpVector().multiply(height/2);
+		heightPosition = centerPosition.add(temp);
+		temp = cam.getUpVector().crossProduct(cam.getViewVector());
+		temp = temp.multiply(width/2);
+		upperLeftPosition = heightPosition.add(temp);
+	}
 	
 	
 	public String getCenterPosition() {

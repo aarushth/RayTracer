@@ -3,7 +3,7 @@ public class Sphere extends Shape{
 	private float radius;
 	
 	
-	public Sphere(Point c, float r, Color col, float kd, float ka, float ref) {
+	public Sphere(Point c, float r, CustomColor col, float kd, float ka, float ref) {
 		center = c;
 		radius = r;
 		color = col;

@@ -16,11 +16,11 @@ public class IntersectionDetails {
 		return point;
 	}
 	
-	public Color getColor() {
+	public CustomColor getColor() {
 		return shape.color;
 	}
 	
-	public void setColor(Color c) {
+	public void setColor(CustomColor c) {
 		shape.color = c;
 	}
 	

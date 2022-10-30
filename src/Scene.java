@@ -33,12 +33,12 @@ public class Scene {
 				buffer.putPixel(new Point(i,j, 0), traceRay(ray, camera.getOrigin(), 0));
 			}
 		}
-		buffer.dumpBuffer();
+		//buffer.dumpBuffer();
 	}
 	
-	public Color traceRay(Vector ray, Point origin, int recursionDepth){
+	public CustomColor traceRay(Vector ray, Point origin, int recursionDepth){
 		if (recursionDepth > 1) {
-			return new Color (0,0,0);
+			return new CustomColor (0,0,0);
 		}
 		
 		IntersectionDetails min = null;
@@ -49,7 +49,7 @@ public class Scene {
 			}
 			
 		}
-		Color finalCol = new Color(0, 0, 0);
+		CustomColor finalCol = new CustomColor(0, 0, 0);
 		if(min != null) {
 			for(int k = 0; k < lightSources.size(); k ++){
 				Vector shadowCheck = Vector.getUnitVector(new Vector(lightSources.get(k).getLightSourceJittered(shadowDeviance), min.getPoint()));

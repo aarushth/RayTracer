@@ -6,13 +6,13 @@ public class Buffer {
 	private int width;
 	private int height;
 	private String filePath;
-	private Color[][] screen;
+	private CustomColor[][] screen;
 	
 	public Buffer(int w, int h, String fp) {
 		filePath = fp;
 		width = w;
 		height = h;
-		screen = new Color[height][width];
+		screen = new CustomColor[height][width];
 	}
 	
 	public void dumpBuffer() {
@@ -34,8 +34,9 @@ public class Buffer {
 		      e.printStackTrace();
 		    }
 	}
-	public void putPixel(Point point, Color p) {
-		if(!(p == null)) {
+	
+	public void putPixel(Point point, CustomColor p) {
+		if(p != null) {
 			if(point.getX() < width && point.getX() > -1 && point.getY() < height && point.getY() > -1) {
 				screen[(int) point.getY()][(int) point.getX()] = p;
 			}else {
@@ -49,5 +50,8 @@ public class Buffer {
 	}
 	public int getHeight() {
 		return height;
+	}
+	public CustomColor[][] getScreen(){
+		return screen;
 	}
 }

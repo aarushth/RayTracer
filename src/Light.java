@@ -1,8 +1,8 @@
 public class Light {
 	private Point lightSource;
-	private Color lightColor;
+	private CustomColor lightColor;
 	
-	public Light(Point s, Color c) {
+	public Light(Point s, CustomColor c) {
 		lightSource = s;
 		lightColor = c;
 	}
@@ -15,7 +15,7 @@ public class Light {
 		return this.lightSource.jitter(deviance);
 	}
 	
-	public Color getLightColor() {
+	public CustomColor getLightColor() {
 		return lightColor;
 	}
 }

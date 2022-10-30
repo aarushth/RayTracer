@@ -7,7 +7,7 @@ public class Triangle extends Shape{
 	private Vector BA;
 	private Vector AC;
 	private Vector CB;
-	public Triangle(Point p1, Point p2, Point p3, Color col, float kd, float ka, float ref) {
+	public Triangle(Point p1, Point p2, Point p3, CustomColor col, float kd, float ka, float ref) {
 		A = p1;
 		B = p2;
 		C = p3;
