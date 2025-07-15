@@ -4,8 +4,7 @@ This is a program that can render an image of customizable spheres, triangles, a
 ## Bugs
 - Currently bugs in the rendering of triangles and their reflections when the triangle isn't perpendicular to the camera.
 ## How to run
-Note: You must have eclipse or other java IDE's, and GIMP or another program that can view ppm files installed to be able to run this program.
-Download all the files into your eclispe-workspace, or wherever you save your projects, then in Eclipse, click create new project and create a new project with the same name as this file- "RayTracer". Then, open the Main class, and update the filePath variable to the filepath where you want the image to be saved, then click run. Then open the location where you saved the file, and open it in GIMP, or any other program that can open a file in the ppm file format.
+Run Main file
 ## Code
 ### Main
 This class is where you define all of the paramteres required to render the image, including the camera position and direction, the image distance and size, the resolution of the final image, the positions and parameters of all of the spheres and triangles, and the smoothness of shadows.
